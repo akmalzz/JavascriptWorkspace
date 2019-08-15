@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var string  = prompt("Enter string to find out longest word in it : ")
+      var maxLength = 0
+      var maxIndex = 0
+      var splitString = string.split(" ")
+      for(var i in splitString)
+      {
+        if(splitString[i].length >= maxLength)
+        {
+          maxLength = splitString[i].length
+          maxIndex = i
+        }
+      }
+      alert("Longest word is : " + splitString[maxIndex])
+    </script>
+  </body>
+</html>

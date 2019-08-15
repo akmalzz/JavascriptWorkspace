@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="padding: 30px" id="div">
+        <button id="button">
+            <img id="img" src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1375&q=80"
+             style="height: 100px;width: 100px;" alt="">
+        </button>
+    </div>
+    <script>
+        function $(id)
+        {
+            return document.getElementById(id)
+        }
+        //Bubbeling Default Value as False
+        // $("div").addEventListener("click", function(){
+        //     alert("DIV")
+        // })
+        // $("button").addEventListener("click", function(){
+        //     alert("BUTTON")
+        // })
+        // $("img").addEventListener("click", function(){
+        //     alert("IMG")
+        // })
+
+        //Capturing with value true
+
+        $("div").addEventListener("click", function(){
+            alert("DIV")
+        }, true)
+        $("button").addEventListener("click", function(){
+            alert("BUTTON")
+        }, true)
+        $("img").addEventListener("click", function(){
+            alert("IMG")
+        }, true)
+    </script>
+</body>
+</html>

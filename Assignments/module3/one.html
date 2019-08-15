@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <select id="dropdown">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+    <script>
+      var dropdown = document.getElementById("dropdown")
+      dropdown.addEventListener("click", function(){
+        for (let i = 0; i < dropdown.length; i++) {
+          if(dropdown.options[i].selected==true)
+          {
+            alert(dropdown.options[i].value)
+          }
+          
+        }
+      })
+      console.log(dropdown)
+    </script>
+  </body>
+</html>

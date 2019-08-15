@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+      var temp = prompt("Enter temprature use small c or f")
+      if(temp.includes("c"))
+      {
+        var c = parseInt(temp)
+        var f = ((c/5)*9)+32
+        alert("Temprature in Farenhiet is : "+f+"f")
+      }
+      else if(temp.includes("f"))
+      {
+        var f = parseInt(temp)
+        var c = ((f-32)/9)*5
+        alert("Temprature in Celcius is : "+c+"c")
+      }
+
+    </script>
+  </body>
+</html>

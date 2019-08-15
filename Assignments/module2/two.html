@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var emp1 = {Name:"Sachin", City:"Pune", Age:"42"}
+      //console.log(emp1)
+      var keys = []
+      var value = " "
+      console.log("Before");
+      console.log(emp1);
+      // console.log("hi");
+      for(var key in emp1)
+      {
+       keys.push(key)
+//        console.log(key)
+        value = emp1[key]
+        emp1[value] = key
+      }
+      // console.log("hello");
+      // console.log(emp1);
+      // console.log("hello");
+      for(var key in keys)
+      {
+        // console.log(keys[key]);
+        delete emp1[keys[key]]
+      }
+      console.log("After");
+      console.log(emp1);
+      // console.log("bye");
+    </script>
+  </body>
+</html>

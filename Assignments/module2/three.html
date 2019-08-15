@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function Person(name, location)
+      {
+        this.name = name
+        this.location = location
+      }
+      Person.prototype.eat = function()
+      {
+        alert("I like sea food")
+      }
+      Person.prototype.introduction = function()
+      {
+        alert("My name is : "+this.name + ". I am from "+ this.location)
+      }
+      Developer.prototype = new Person()
+      function Developer(name, location, projects)
+      {
+        Person.call(this, name, location)
+        this.projects = projects
+      }
+      Developer.prototype.takeleave = function()
+      {
+        alert("I am on leave next week")
+      }
+      Developer.prototype.introduction = function()
+      {
+        alert("My name is : "+this.name + ". I am from "+ this.location + " and I am allocated in "+this.projects)
+      }
+
+
+      var d1 = new Developer("Akmal", "Akola", ["blockchain", "ai"])
+      d1.eat()
+      d1.introduction()
+      d1.takeleave()
+
+      var d2 = new Developer("Jacob", "LA", ["ML", "UI"])
+      d2.eat()
+      d2.introduction()
+      d2.takeleave()
+    </script>
+  </body>
+</html>

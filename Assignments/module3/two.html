@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="textdiv"><textarea name="" id="display" cols="8" rows="2"></textarea></div>
+    <div id="div1">
+        <button class="numbersNopr" value="1">1</button>
+        <button class="numbersNopr" value="2">2</button>
+        <button class="numbersNopr" value="3">3</button>
+    </div>
+    <div id="div2">
+            <button class="numbersNopr" value="4">4</button>
+            <button class="numbersNopr" value="5">5</button>
+            <button class="numbersNopr" value="6">6</button>
+    </div>
+
+    <div id="div3">
+            <button class="numbersNopr" value="7">7</button>
+            <button class="numbersNopr" value="8">8</button>
+            <button class="numbersNopr" value="9">9</button>
+    </div>
+    <div id="operators">
+        <button class="numbersNopr" value="+">+</button>
+        <button class="numbersNopr" value="-">-</button>
+        <button class="numbersNopr" value="/">/</button>
+        <button class="numbersNopr" value="*">*</button>
+    </div>
+    <div id="oprations">
+        <button id="result">Result</button>
+        <button id="clear">Clear</button>
+    </div>
+    <script>
+        var string = ""
+        function $(id)
+        {
+            return document.getElementById(id)
+        } 
+        function display()
+        {
+            $("display").innerText = string
+        }
+        function calculate(string)
+        {
+            var split = string.split("/")
+            if(split.length==2)
+            {
+                return calculate(split[0]) / calculate(split[1])
+            }
+            var split = string.split("*")
+            if(split.length==2)
+            {
+                return calculate(split[0]) * calculate(split[1])
+            }
+            var split = string.split("+")
+            if(split.length==2)
+            {
+                return calculate(split[0]) + calculate(split[1])
+            }
+            var split = string.split("-")
+            if(split.length==2)
+            {
+                return calculate(split[0]) - calculate(split[1])
+            }
+            return parseInt(string)
+        }
+        var numbers = document.getElementsByClassName("numbersNopr") 
+        for (let i = 0; i < numbers.length; i++) 
+        {
+            numbers[i].addEventListener("click", function(){
+                string+=numbers[i].value
+                display()
+            })    
+        }
+        $("result").addEventListener("click", function()
+        {
+            var result = calculate(string)
+            string = result
+            display()
+        })
+        $("clear").addEventListener("click", function(){
+            string=""
+            display()
+        })
+    </script>
+</body>
+</html>

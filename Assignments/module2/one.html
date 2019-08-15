@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+      // var bank= [ {name: 'JOHN', account: 'Saving’, AccountStatus: ‘blocked’},
+      //             {name: 'KATE', account: 'Current', AccountStatus: ‘active’},
+      //             {name: 'MIKE', account:  'Saving', AccountStatus: ‘active’}
+      //           ]
+      var bank =[
+        {name:'JHON', account:'Saving', AccountStatus:'blocked'},
+        {name:'KATE', account:'Current', AccountStatus:'active'},
+        {name:'MIKE', account:'Saving', AccountStatus:'active'}
+      ]
+      var dataNotFound = true
+      var name = prompt("Enter your name : ")
+      for(var i in bank)
+      {
+        if(name==bank[i].name)
+        {
+          document.write("Name: "+bank[i].name+"<br/>")
+          document.write("Account Type: "+bank[i].account+"<br/>")
+          if(bank[i].AccountStatus=='blocked')
+          {
+            document.write("You need to activate your account")
+          }
+          else if(bank[i].AccountStatus=='active')
+          {
+            document.write("Account is Active")
+          }
+          dataNotFound = false
+        }
+      }
+
+      if (dataNotFound)
+      {
+          alert("No record found with that name")
+      }
+    </script>
+  </body>
+</html>
